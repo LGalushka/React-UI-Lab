@@ -3,16 +3,22 @@ import ProgressBar from "./ProgressBar";
 import Rating from "./Rating";
 import Toggle from "./Toggle";
 import Input from "./Input";
+import Button from "./ui/Button";
 
 const FeedbackForm = () => {
 
   const [name, setName] = useState<string>('');
-  const [srars, setStars] = useState<number>(0);
+  const [stars, setStars] = useState<number>(0);
   const [isAgreed, setIsAgreed] = useState<boolean>(false);
 
-  const steps = [name !== '', srars > 0, isAgreed];
+  const steps = [name !== '', stars > 0, isAgreed];
   const completedSteps = steps.filter(Boolean).length;
   const progressValue = Math.round((completedSteps / steps.length) * 100);
+
+  const handleSubmit = () => {
+    console.log('Отправлено!', {name, stars, isAgreed});
+    alert('Спасибо за отзыв!');    
+  }
 
   return (
     <div style={{ maxWidth: '450px', padding: '20px', border: '1px solid #ddd', borderRadius: '12px'}}>
@@ -32,8 +38,8 @@ const FeedbackForm = () => {
 
         <p>Ваша оценка:</p>
 
-        <div onClick={() => setStars(5)} style={{ cursor: 'pointer'}}>
-          <Rating value={srars} max={5} onClick={(newValue) => setStars(newValue)}/>
+        <div onClick={() => setStars(stars === 5 ? 0 : 5)} style={{ cursor: 'pointer'}}>
+          <Rating value={stars} max={5} onClick={(newValue) => setStars(newValue)}/>
         </div>
 
         <div style={{ marginTop: '15px'}}>
@@ -45,22 +51,14 @@ const FeedbackForm = () => {
         </div>        
       </div>
 
-      <button
-        disabled={progressValue < 100}
-        style={{
-          marginTop: '20px',
-          width: '100%',
-          padding: '10px',
-          backgroundColor: progressValue === 100 ? '#4CAF50' : '#ccc',
-          color: 'white',
-          border: 'none',
-          borderRadius: '6px',
-          cursor: progressValue === 100 ? 'pointer' : 'not-allowed',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.5)'
-        }}
-      >
-        Отправить
-      </button>
+        <Button 
+          onClick={handleSubmit}
+          disabled={progressValue < 100}
+          variant={progressValue === 100 ? 'primary' : 'secondary'}
+        >
+          Отправить
+        </Button>
+        
     </div>
   )
 }
