@@ -2,6 +2,7 @@ import { useState } from "react"
 import Icon from "./components/Icon"
 import Input from "./components/Input"
 import Toggle from "./components/Toggle"
+import Rating from "./components/Rating"
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
 
       <Toggle label="Получать уведомления" isChecked={isChecked} onChange={handleClick} />
 
+      <Rating value={3} max={10} />
     </>
   )
 }
