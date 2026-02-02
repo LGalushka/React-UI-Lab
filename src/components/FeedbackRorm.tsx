@@ -2,6 +2,7 @@ import { useState } from "react"
 import ProgressBar from "./ProgressBar";
 import Rating from "./Rating";
 import Toggle from "./Toggle";
+import Input from "./Input";
 
 const FeedbackForm = () => {
 
@@ -20,13 +21,14 @@ const FeedbackForm = () => {
       <ProgressBar progress={progressValue} label="Заполнение анкеты" />
 
       <div style={{ marginTop: '20px'}}>
-        <label>Ваше имя:</label>
-        <input 
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Введите имя"
-        style={{ width: '100%', marginBottom: '15px', padding: '8px'}}
-        />
+  
+        <Input
+          label="Ваше имя"
+          placeholder="Введите имя:"
+          isRequired={true}
+          value={name}          
+          onChange={setName}
+          />
 
         <p>Ваша оценка:</p>
 
@@ -54,6 +56,7 @@ const FeedbackForm = () => {
           border: 'none',
           borderRadius: '6px',
           cursor: progressValue === 100 ? 'pointer' : 'not-allowed',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.5)'
         }}
       >
         Отправить
