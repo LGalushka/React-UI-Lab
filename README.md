@@ -1,73 +1,24 @@
-# React + TypeScript + Vite
+# 🌟 Feedback & Components Lab
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Добро пожаловать в мой тренировочный проект на React! Здесь я учусь мыслить как разработчик: разбивать интерфейс на атомы, управлять состоянием и строить чистую архитектуру.
 
-Currently, two official plugins are available:
+## 🏗 Что внутри?
+В этом репозитории я практикую создание переиспользуемых компонентов (UI Kit) и их интеграцию в реальные фичи:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*   **UI Components:** Создание базовых "кирпичиков" (Button, Input, Badge) 🧱
+*   **Feedback Form:** Интерактивная форма с обработкой данных и стейтами 📝
+*   **Filter System (In Progress):** Система умной фильтрации и поиска по контенту 🔍
+*   **State Management:** Поднятие состояния и работа с пропсами 🧠
 
-## React Compiler
+## 🚀 Стек технологий
+*   **React** (Functional Components, Hooks)
+*   **CSS Modules** (Изолированные стили)
+*   **Vite** (Быстрая сборка проекта)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📈 Мои цели
+1. Научиться структурировать компоненты по принципу Single Responsibility.
+2. Понять логику взаимодействия "родитель-ребенок" через пропсы.
+3. Организовать чистую структуру папок (Atomic Design / Feature-based).
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+*Проект создан в процессе обучения созданию гибких и масштабируемых интерфейсов.* 👩‍💻
