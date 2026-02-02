@@ -33,7 +33,7 @@ const FeedbackForm = () => {
         <p>Ваша оценка:</p>
 
         <div onClick={() => setStars(5)} style={{ cursor: 'pointer'}}>
-          <Rating value={srars} max={5} />
+          <Rating value={srars} max={5} onClick={(newValue) => setStars(newValue)}/>
         </div>
 
         <div style={{ marginTop: '15px'}}>
