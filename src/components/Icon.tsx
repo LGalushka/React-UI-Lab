@@ -15,7 +15,10 @@ const iconsData = {
 
   const Icon = ({ name, size = 24, color = 'black'}: IconProps) => {
     return (
-      <div style={{ color, fontSize: size, display: 'inline-block'}}>
+      <div 
+        style={{ color, fontSize: size, display: 'inline-block'}}
+        aria-label={`Иконка: ${name}`}
+        >
         {iconsData[name]}
       </div>
     )
