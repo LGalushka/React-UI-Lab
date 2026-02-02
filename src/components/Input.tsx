@@ -1,5 +1,5 @@
 type InputProps = {
-  label: string;
+  label?: string;
   placeholder: string;
   isRequired?: boolean;
   value: string;
@@ -7,7 +7,7 @@ type InputProps = {
 }
 
 const Input = ({ label, placeholder, isRequired=false, value, onChange }: InputProps) => {
-  const inputId = label.toLowerCase().replace(/\s+/g, '-')
+  const inputId = label ? label.toLowerCase().replace(/\s+/g, '-') : undefined;
 
   return (
   <div>
