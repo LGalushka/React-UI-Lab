@@ -8,25 +8,31 @@ import SandboxPage from './pages/SandboxPages';
 
 function App() {
   return (
-    <BrowserRouter>
-    <div className="app-wrapper" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
-      <Header />
+   <BrowserRouter>
+   { /** Главный контейнер на весь экран */}
+   <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#f9fafa'}}>
+    
+    { /** Боковая панель (всегда на месте) */}
+    <Sidebar />
 
-      <div style={{ display: 'flex', flex: 1}}>
-        <Sidebar />
+    {/** Основная рабочая область */}
+    <main style={{
+      flex: 1,
+      padding: '20px',
+      overflow: 'auto',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center'
+    }}>
+      {/** Здесь происходит магия переключения */}
+      <Routes>
+        <Route path="/" element={<FeedbackForm />} />
+        <Route path="/sandbox" element={<SandboxPage />} />
+      </Routes>
+    </main>
 
-        <main style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5'}}>
-          {/** Здесь будет менять контент в зависисоти от пути */}
-          <Routes>
-            <Route path="/" element={<FeedbackForm />} />
-            <Route path="/sandbox" element={<SandboxPage />} />
-          </Routes>
-        </main>
-      </div>
-
-      <Footer />
-      </div>
-      </BrowserRouter>
+   </div>
+   </BrowserRouter>
   );
 };
 
