@@ -1,0 +1,80 @@
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Эффект при наведении - Dashboard должен быть отзывчивым! */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.label {
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.iconWrapper {
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+/* Стили для тренда */
+.up { color: #10b981; font-size:  0.875rem; font-weight: 600; }
+.down { color: #ef4444; font-size:  0.875rem; font-weight: 600; }
+
+/* Тема и варианты цветов */
+
+/* Primary - Синий */
+.primary .iconWrapper {
+  background-color: #eff6ff;
+  color: #3b82f6;
+}
+
+/* Success - Зеленый */
+.success .iconWrapper {
+  background-color: #ecfdf5;
+  color: #10b981;
+}
+
+/* Warning - Оранжевый */
+.warning .iconWrapper {
+  background-color: #fffbeb;
+  color: #f59e0b;
+}
+
+/* Danger - Красный */
+.danger .iconWrapper {
+  background-color: #fef2f2;
+  color: #ef4444;
+}

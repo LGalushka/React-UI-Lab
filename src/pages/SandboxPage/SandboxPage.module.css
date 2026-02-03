@@ -1,0 +1,21 @@
+.container {
+  padding: 24px;
+  background-color: #f9fafb;
+  min-height: 100vh;
+}
+
+.title {
+  margin-bottom: 32px;  
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  /* auto-fill сам решит, сколько карточек влезет в ряд */
+  /* 280px — минимальная ширина, при которой карточка выглядит ок */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
