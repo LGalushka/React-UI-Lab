@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9fafa;
+}
+
+.main {
+  flex: 1;
+  background-color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 32px; /* Единый отступ для всех страниц */
+  max-width: 1400px; /* Чтобы контект н разваливался но очень широких экранах */
+  width: 100%;
+  margin: 0 auto; /* Центрирует контент */
+}
