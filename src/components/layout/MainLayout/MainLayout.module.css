@@ -5,13 +5,13 @@
 }
 
 .mainContainer {
-  flex: 1;
-  background-color: #f9fafb;
   display: flex;
   flex-direction: column;
+  min-height: 100vh; /* Контейнер всегда в высоту экрана */
+  flex: 1;
 }
 
 .content {
-  flex: 1;
-  padding: 20px;
+  flex: 1; /* Этот блок "съест" всё свободное место, вытолкнув футер вниз */
+  padding: 24px;
 }
