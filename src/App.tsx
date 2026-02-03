@@ -1,60 +1,33 @@
-import { useState } from "react"
-import FeedbackForm from "./components/FeedbackRorm"
-import FilterBar from "./components/FilterBar/FilterBar";
-
-const feedbacks = [
-  { id: 1, text: "Все супер!", rating: 5 },
-  { id: 2, text: "Плохо", rating: 2 },
-];
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from './components/layout/Header';
+import Sidebar from './components/layout/Sidebar';
+import Footer from "./components/layout/Footer";
+import FeedbackForm from "./pages/FeedbackRorm";
+import SandboxPage from './pages/SandboxPages';
 
 
 function App() {
-  const [search, setSearch] = useState<string>('');
-  const [activeFilter, setActiveFilter] = useState<string>('all')
-
-  const filteredFeedback = feedbacks.filter(item => {
-    const matchesSearch = item.text.toLowerCase().includes(search.toLowerCase().trim());
-
-    // Проверка по кнопкам фильтра
-    const matchesFilter = 
-    activeFilter === 'all' ||
-    (activeFilter === 'positive' && item.rating >= 4) ||
-    (activeFilter === 'negative' && item.rating < 4);
-
-    return matchesSearch && matchesFilter
-  });
-
   return (
-    <>
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh',
-        backgroundColor: '#8b8b8bff'
-      }}>
-        <FeedbackForm />
+    <BrowserRouter>
+    <div className="app-wrapper" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
+      <Header />
+
+      <div style={{ display: 'flex', flex: 1}}>
+        <Sidebar />
+
+        <main style={{ flex: 1, padding: '20px', backgroundColor: '#f5f5f5'}}>
+          {/** Здесь будет менять контент в зависисоти от пути */}
+          <Routes>
+            <Route path="/" element={<FeedbackForm />} />
+            <Route path="/sandbox" element={<SandboxPage />} />
+          </Routes>
+        </main>
       </div>
 
-      <FilterBar 
-      search={search}
-      onSearchChange={setSearch}
-      activeFilter={activeFilter}
-      onFilterChange={setActiveFilter}
-      />
-
-      {/**Отрисовка результата */}
-      <div style={{ marginTop: '20px'}}>
-        {filteredFeedback.map(item => (
-          <div key={item.id} style={{ borderBottom: '1px solid #ccc', padding: '10px', color: 'white'}}>
-            {item.text} - ⭐️ {item.rating}
-          </div>
-        ))}
-      {filteredFeedback.length === 0 && <p>Ничего не найдено 🤷‍♂️</p>}
+      <Footer />
       </div>
+      </BrowserRouter>
+  );
+};
 
-    </>
-  )
-}
-
-export default App
+export default App;
