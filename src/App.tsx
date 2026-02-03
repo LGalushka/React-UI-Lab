@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from './components/layout/Header';
-import Sidebar from './components/layout/Sidebar';
-import Footer from "./components/layout/Footer";
-import FeedbackForm from "./pages/FeedbackRorm";
-import SandboxPage from './pages/SandboxPages';
+//import Header from './components/layout/Header/Header';
+import Sidebar from './components/layout/Sidebar/Sidebar';
+//import Footer from "./components/layout/Footer/Footer";
+import FeedbackForm from "./pages/FeedbackRorm/FeedbackRorm";
+import SandboxPage from './pages/SandboxPage/SandboxPages';
 
 
 function App() {

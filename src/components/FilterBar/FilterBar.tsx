@@ -1,5 +1,5 @@
-import Input from "../Input"
-import Button from "../ui/Button"
+import Input from "../ui/Input/Input"
+import Button from "../ui/Button/Button"
 
 const FILTERS = [
   { id: 'all', label: "Все"},

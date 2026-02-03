@@ -1,9 +1,9 @@
 import { useState } from "react"
-import ProgressBar from "../components/ProgressBar";
-import Rating from "../components/Rating";
-import Toggle from "../components/Toggle";
-import Input from "../components/Input";
-import Button from "../components/ui/Button";
+import ProgressBar from "../../components/ui/ProgressBar/ProgressBar";
+import Rating from "../../components/ui/Rating/Rating";
+import Toggle from "../../components/ui/Toggle/Toggle";
+import Input from "../../components/ui/Input/Input";
+import Button from "../../components/ui/Button/Button";
 
 const FeedbackForm = () => {
 
