@@ -78,3 +78,7 @@
   background-color: #fef2f2;
   color: #ef4444;
 }
+
+.primary .iconWrapper { color: #4f46e5; background: #eef2ff; padding: 8px; border-radius: 10px; }
+.success .iconWrapper { color: #10b981; background: #ecfdf5; padding: 8px; border-radius: 10px; }
+.danger .iconWrapper  { color: #ef4444; background: #fef2f2; padding: 8px; border-radius: 10px; }

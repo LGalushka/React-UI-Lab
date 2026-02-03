@@ -8,9 +8,7 @@ import { MainLayout } from "./components/layout/MainLayout/MainLayout";
 
 function App() {
   return (
-   <BrowserRouter>
-   { /** Главный контейнер на весь экран */}
-   <div style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#f9fafa'}}>
+  <BrowserRouter>
     
     {/** Основная рабочая область */}
     <MainLayout>
@@ -21,8 +19,7 @@ function App() {
       </Routes>
     </MainLayout>
 
-   </div>
-   </BrowserRouter>
+  </BrowserRouter>
   );
 };
 
