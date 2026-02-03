@@ -1,0 +1,72 @@
+.header {
+  height: 64px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid #eaeaea; /* Отделяем от контента тонкой линией */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02); /* Едва заметная тень */
+}
+
+.navigation {
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.link:hover { color: #4CAF50; }
+
+.active {
+  color: #4CAF50;
+  border-bottom: 2px solid #4CAF50;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  background: #fdfdfd;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.searchBox:focus-within {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+  background: #fff;
+}
+
+.searchBox input {
+  border: none;  
+  background: transparent;
+  outline: none;
+  padding: 8px 0;
+  width: 100%;
+  font-size: 14px;
+}
+
+.userCircle {
+  width: 35px;
+  height: 35px;
+  background: #e8f5e9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4CAF50;
+}

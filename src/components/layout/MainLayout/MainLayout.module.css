@@ -4,7 +4,7 @@
   background-color: #f9fafa;
 }
 
-.main {
+.mainContainer {
   flex: 1;
   background-color: #f9fafb;
   display: flex;
@@ -12,8 +12,6 @@
 }
 
 .content {
-  padding: 32px; /* Единый отступ для всех страниц */
-  max-width: 1400px; /* Чтобы контект н разваливался но очень широких экранах */
-  width: 100%;
-  margin: 0 auto; /* Центрирует контент */
+  flex: 1;
+  padding: 20px;
 }
