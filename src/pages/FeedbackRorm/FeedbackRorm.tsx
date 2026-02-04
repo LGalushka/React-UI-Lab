@@ -1,4 +1,5 @@
 import { useState } from "react"
+import styles from "./FeedbackRorm.module.css"
 import ProgressBar from "../../components/ui/ProgressBar/ProgressBar";
 import Rating from "../../components/ui/Rating/Rating";
 import Toggle from "../../components/ui/Toggle/Toggle";
@@ -10,6 +11,7 @@ const FeedbackForm = () => {
   const [name, setName] = useState<string>('');
   const [stars, setStars] = useState<number>(0);
   const [isAgreed, setIsAgreed] = useState<boolean>(false);
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
   const steps = [name !== '', stars > 0, isAgreed];
   const completedSteps = steps.filter(Boolean).length;
@@ -17,13 +19,29 @@ const FeedbackForm = () => {
 
   const handleSubmit = () => {
     console.log('Отправлено!', {name, stars, isAgreed});
-    alert('Спасибо за отзыв!');    
+    setIsSubmitted(true);    
+  }
+
+  const handleReset =() => {
+    setName('');
+    setStars(0);
+    setIsAgreed(false);
+    setIsSubmitted(false);
   }
 
   return (
-    <div style={{ maxWidth: '450px', padding: '20px', border: '1px solid #ddd', borderRadius: '12px'}}>
-      <h2>Оставить отзыв</h2>
-
+    <div className={styles.form}>
+      
+      {isSubmitted ? (
+        <div className={styles.submitted}>
+          <h2>✔ Спасибо за отзыв!</h2>
+          <p>Ваше мнение очень важно для нас.</p>
+          <Button onClick={handleReset}>Написать еще раз</Button>
+        </div>
+      ) : (
+        <>
+        <h2>Оставить отзыв</h2>
+      
       <ProgressBar progress={progressValue} label="Заполнение анкеты" />
 
       <div style={{ marginTop: '20px'}}>
@@ -58,7 +76,8 @@ const FeedbackForm = () => {
         >
           Отправить
         </Button>
-        
+        </>
+        )}
     </div>
   )
 }

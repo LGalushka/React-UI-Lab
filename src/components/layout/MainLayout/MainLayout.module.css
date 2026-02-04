@@ -14,4 +14,8 @@
 .content {
   flex: 1; /* Этот блок "съест" всё свободное место, вытолкнув футер вниз */
   padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
