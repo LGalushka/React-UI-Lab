@@ -33,13 +33,13 @@ const FeedbackForm = () => {
     <div className={styles.form}>
       
       {isSubmitted ? (
-        <div className={styles.submitted}>
+        <div key="success" className={styles.submitted}>
           <h2>✔ Спасибо за отзыв!</h2>
           <p>Ваше мнение очень важно для нас.</p>
           <Button onClick={handleReset}>Написать еще раз</Button>
         </div>
       ) : (
-        <>
+        <div key="form" className={styles.formInner}>
         <h2>Оставить отзыв</h2>
       
       <ProgressBar progress={progressValue} label="Заполнение анкеты" />
@@ -76,7 +76,7 @@ const FeedbackForm = () => {
         >
           Отправить
         </Button>
-        </>
+        </div>
         )}
     </div>
   )
